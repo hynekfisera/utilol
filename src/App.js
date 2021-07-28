@@ -72,7 +72,7 @@ function App() {
 
   async function getSummonerInfo(name) {
     const link = "https://" + getServerInfo(server).host + "/lol/summoner/v4/summoners/by-name/" + name + key;
-    const response = await fetch(link);
+    const response = await fetch("https://hynekfisera-cors-anywhere.herokuapp.com/" + link);
     console.log(response.json());
   }
 
