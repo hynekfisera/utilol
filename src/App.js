@@ -67,17 +67,18 @@ function App() {
   const [inputValue, setInputValue] = useState("");
 
   function getServerInfo(name) {
-    return servers.find((server) => (server.name = name));
+    return servers.find((server) => server.name === name);
   }
 
   async function getSummonerInfo(name) {
     const link = "https://" + getServerInfo(server).host + "/lol/summoner/v4/summoners/by-name/" + name + key;
-    const response = await fetch("https://hynekfisera-cors-anywhere.herokuapp.com/" + link);
-    console.log(response.json());
+    return fetch("https://hynekfisera-cors-anywhere.herokuapp.com/" + link).then((response) => {
+      return response.json();
+    });
   }
 
   async function getMaxDeaths() {
-    console.log(getSummonerInfo(inputValue));
+    console.log(await getSummonerInfo(inputValue));
   }
 
   return (
