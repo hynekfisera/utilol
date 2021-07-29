@@ -118,8 +118,9 @@ function App() {
   }
 
   async function onSubmit() {
+    setProgress(0);
     const result = await getMaxDeaths(inputValue);
-    setResultText(`${inputValue} has reached max count of ${result} deaths in the last 50 games!`);
+    setResultText(`${inputValue} has reached max count of ${result} deaths in the last ${progress} games!`);
   }
 
   return (
