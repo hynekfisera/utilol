@@ -3,7 +3,7 @@ const fetch = require("node-fetch");
 
 function App() {
   const key = "api_key=" + process.env.REACT_APP_RIOT;
-  const cors = "https://cors-anywhere.herokuapp.com/";
+  const cors = process.env.REACT_APP_CORS;
 
   const servers = [
     {
