@@ -13,7 +13,7 @@ This is just a very simple project and my first experience with using Riot Games
 5. Create a `.env` file
 6. Add a `REACT_APP_RIOT` variable and set the value to your API key
 7. Add a `REACT_APP_CORS` variable and set the value to your CORS proxy URL
-8. Start the app using `npm start`
+8. Start the development server using `npm start` (localhost:3000)  or build the app using `npm run build` (build/index.html)
 9. Pick your server and type your summoner name
 10. Click Submit
 
