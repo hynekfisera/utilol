@@ -10,7 +10,7 @@ This is just a very simple project and my first experience with using Riot Games
 2. Install the dependencies using `npm install`
 3. Create a [Riot Developer Account](https://developer.riotgames.com/) and generate an API key
 4. Set up a CORS proxy (I used [this one](https://github.com/Rob--W/cors-anywhere)) and deploy it somewhere (I used [Heroku](https://www.heroku.com/))
-5. Create a `.env` file
+5. Create a `.env` file ([Example](https://gist.github.com/hynekfisera/9b2bbf84a5d233485004fde081f4c0cf))
 6. Add a `REACT_APP_RIOT` variable and set the value to your API key
 7. Add a `REACT_APP_CORS` variable and set the value to your CORS proxy URL
 8. Start the development server using `npm start` (localhost:3000)  or build the app using `npm run build` (build/index.html)
