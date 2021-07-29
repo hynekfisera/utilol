@@ -2,7 +2,8 @@ import { useState } from "react";
 const fetch = require("node-fetch");
 
 function App() {
-  const key = "api_key=RGAPI-c0b8fb05-ed80-41d0-ae11-fb8a9aa6fbdd";
+  const key = "api_key=" + process.env.REACT_APP_RIOT;
+  const cors = "https://cors-anywhere.herokuapp.com/";
 
   const servers = [
     {
@@ -76,21 +77,21 @@ function App() {
 
   async function getSummonerInfo(name) {
     const link = "https://" + getServerInfo(server).host + "/lol/summoner/v4/summoners/by-name/" + name + "?" + key;
-    return fetch("https://hynekfisera-cors-anywhere.herokuapp.com/" + link).then((response) => {
+    return fetch(cors + link).then((response) => {
       return response.json();
     });
   }
 
   async function getMatches(puuid) {
     const link = "https://" + getServerInfo(server).routing + "/lol/match/v5/matches/by-puuid/" + puuid + "/ids?start=0&count=50&" + key;
-    return fetch("https://hynekfisera-cors-anywhere.herokuapp.com/" + link).then((response) => {
+    return fetch(cors + link).then((response) => {
       return response.json();
     });
   }
 
   async function getSingleMatch(id) {
     const link = "https://" + getServerInfo(server).routing + "/lol/match/v5/matches/" + id + "?" + key;
-    return fetch("https://hynekfisera-cors-anywhere.herokuapp.com/" + link).then((response) => {
+    return fetch(cors + link).then((response) => {
       return response.json();
     });
   }
@@ -118,7 +119,7 @@ function App() {
 
   async function onSubmit() {
     const result = await getMaxDeaths(inputValue);
-    setResultText(`${inputValue} has reached a maximal value of ${result} deaths in the last 50 games!`);
+    setResultText(`${inputValue} has reached max count of ${result} deaths in the last 50 games!`);
   }
 
   return (
