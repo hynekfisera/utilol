@@ -120,12 +120,12 @@ function App() {
   async function onSubmit() {
     setProgress(0);
     const result = await getMaxDeaths(inputValue);
-    setResultText(`${inputValue} has reached max count of ${result} deaths in the last ${progress} games!`);
+    setResultText(`${inputValue} has reached max count of ${result} deaths in the last 50 games!`);
   }
 
   return (
     <div className="app">
-      <header>
+      <div>
         <select
           value={server}
           onChange={(e) => {
@@ -140,9 +140,9 @@ function App() {
             );
           })}
         </select>
-      </header>
-      <input type="text" placeholder="Summoner name" value={inputValue} onInput={(e) => setInputValue(e.target.value)} />
-      <button onClick={onSubmit}>Submit</button>
+        <input type="text" placeholder="Summoner name" value={inputValue} onInput={(e) => setInputValue(e.target.value)} />
+        <button onClick={onSubmit}>Submit</button>
+      </div>
       <progress value={progress} max="50">
         {progress}
       </progress>
